@@ -1,6 +1,6 @@
-#!/usr/bin/php
 <?php
 
+header('Access-Control-Allow-Origin: *'); 
 /**
  * Yelp Fusion API code sample.
  *
@@ -185,26 +185,26 @@ function query_api($term, $location) {
 
     $response = json_decode(search($bearer_token, $term, $location));
     $business_id = $response->businesses[0]->id;
+    // COMMENT
+//     print sprintf(
+//         "%d businesses found, querying business info for the top result \"%s\"\n\n",         
+//         count($response->businesses),
+//         $business_id
+//     );
     
-    print sprintf(
-        "%d businesses found, querying business info for the top result \"%s\"\n\n",         
-        count($response->businesses),
-        $business_id
-    );
+//     $response = get_business($bearer_token, $business_id);
     
-    $response = get_business($bearer_token, $business_id);
-    
-    print sprintf("Result for business \"%s\" found:\n", $business_id);
-    $pretty_response = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-    print "$pretty_response\n";
-}
+//     print sprintf("Result for business \"%s\" found:\n", $business_id);
+//     $pretty_response = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+//     print "$pretty_response\n";
+// }
 
-/**
- * User input is handled here 
- */
-$longopts  = array(
-    "term::",
-    "location::",
+// /**
+//  * User input is handled here 
+//  */
+// $longopts  = array(
+//     "term::",
+//     "location::",
 );
     
 //$options = getopt("", $longopts);
