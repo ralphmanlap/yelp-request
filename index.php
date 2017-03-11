@@ -185,6 +185,7 @@ function query_api($term, $location) {
 
     $response = json_decode(search($bearer_token, $term, $location));
     $business_id = $response->businesses[0]->id;
+};
     // COMMENT
 //     print sprintf(
 //         "%d businesses found, querying business info for the top result \"%s\"\n\n",         
@@ -205,7 +206,7 @@ function query_api($term, $location) {
 // $longopts  = array(
 //     "term::",
 //     "location::",
-);
+// );
     
 //$options = getopt("", $longopts);
 
