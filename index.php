@@ -184,7 +184,9 @@ function query_api($term, $location) {
     $bearer_token = obtain_bearer_token();
 
     $response = json_decode(search($bearer_token, $term, $location));
-    $business_id = $response->businesses[0]->id;
+    // $business_id = $response->businesses[0]->id;
+    $pretty_response = json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    print "$pretty_response\n";
 };
     // COMMENT
 //     print sprintf(
@@ -200,13 +202,13 @@ function query_api($term, $location) {
 //     print "$pretty_response\n";
 // }
 
-// /**
-//  * User input is handled here 
-//  */
-// $longopts  = array(
-//     "term::",
-//     "location::",
-// );
+/**
+ * User input is handled here 
+ */
+$longopts  = array(
+    "term::",
+    "location::",
+);
     
 //$options = getopt("", $longopts);
 
