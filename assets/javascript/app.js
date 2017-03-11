@@ -15,10 +15,10 @@
       var restaurant = "Wendys";
       var location = "Clifton,NJ";
 
-      var queryURL = "https://dry-plateau-27231.herokuapp.com/?term=" + restaurant + "&location=" + location;
+      //var queryURL = "https://dry-plateau-27231.herokuapp.com/?term=" + restaurant + "&location=" + location;
 
       $.ajax({
-          url: queryURL,
+          url: index.php,
           method: "GET"
         }).done(function(response){
         console.log(response);

@@ -214,8 +214,8 @@ $longopts  = array(
 
 $term = $_GET['term'] ?: $GLOBALS['DEFAULT_TERM'];
 $location = $_GET['location'] ?: $GLOBALS['DEFAULT_LOCATION'];
-echo $_GET['term'] . "\n";
-echo $_GET['location'] . "\n";
+// echo $_GET['term'] . "\n";
+// echo $_GET['location'] . "\n";
 query_api($term, $location);
 
 ?>
